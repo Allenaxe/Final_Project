@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="來源檔案">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="標頭檔">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="資源檔">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="資源檔\image">
+      <UniqueIdentifier>{945d549a-9084-4f1b-bb31-f92945e9bf33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="資源檔\image\blood">
+      <UniqueIdentifier>{0cb5af43-487e-43ca-a07f-e76e628c9027}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="資源檔\image\defence">
+      <UniqueIdentifier>{14504858-0eae-465e-8b52-349f03082492}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="資源檔\image\magic">
+      <UniqueIdentifier>{0604689d-9f98-49c9-a53b-138d5c0b5623}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="資源檔\image\sound">
+      <UniqueIdentifier>{b19dad73-02ca-4114-823a-e511883b3ff0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="scene.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="obstacle.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Gamewindow.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="global.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="monster.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="charater.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="monster.c">
+      <Filter>資源檔</Filter>
+    </ClCompile>
+    <ClCompile Include="scene.c">
+      <Filter>資源檔</Filter>
+    </ClCompile>
+    <ClCompile Include="Gamewindow.c">
+      <Filter>資源檔</Filter>
+    </ClCompile>
+    <ClCompile Include="global.c">
+      <Filter>資源檔</Filter>
+    </ClCompile>
+    <ClCompile Include="main.c">
+      <Filter>資源檔</Filter>
+    </ClCompile>
+    <ClCompile Include="character.c">
+      <Filter>資源檔</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="image\logo.png">
+      <Filter>資源檔\image</Filter>
+    </Image>
+    <Image Include="image\NewGame.png">
+      <Filter>資源檔\image</Filter>
+    </Image>
+    <Image Include="image\pause.png">
+      <Filter>資源檔\image</Filter>
+    </Image>
+    <Image Include="image\pause_press.png">
+      <Filter>資源檔\image</Filter>
+    </Image>
+    <Image Include="image\stage.jpg">
+      <Filter>資源檔\image</Filter>
+    </Image>
+    <Image Include="image\StartScene0.png">
+      <Filter>資源檔\image</Filter>
+    </Image>
+    <Image Include="image\UI.png">
+      <Filter>資源檔\image</Filter>
+    </Image>
+    <Image Include="image\char_atk1.png">
+      <Filter>資源檔\image</Filter>
+    </Image>
+    <Image Include="image\char_atk2.png">
+      <Filter>資源檔\image</Filter>
+    </Image>
+    <Image Include="image\char_move1.png">
+      <Filter>資源檔\image</Filter>
+    </Image>
+    <Image Include="image\char_move2.png">
+      <Filter>資源檔\image</Filter>
+    </Image>
+    <Image Include="image\Charater.png">
+      <Filter>資源檔\image</Filter>
+    </Image>
+    <Image Include="image\icon.jpg">
+      <Filter>資源檔\image</Filter>
+    </Image>
+    <Image Include="image\defence\defence_1.png">
+      <Filter>資源檔\image\defence</Filter>
+    </Image>
+    <Image Include="image\defence\defence_2.png">
+      <Filter>資源檔\image\defence</Filter>
+    </Image>
+    <Image Include="image\defence\defence_3.png">
+      <Filter>資源檔\image\defence</Filter>
+    </Image>
+    <Image Include="image\defence\defence_4.png">
+      <Filter>資源檔\image\defence</Filter>
+    </Image>
+    <Image Include="image\defence\defence_5.png">
+      <Filter>資源檔\image\defence</Filter>
+    </Image>
+    <Image Include="image\blood\blood_1.png">
+      <Filter>資源檔\image\blood</Filter>
+    </Image>
+    <Image Include="image\blood\blood_2.png">
+      <Filter>資源檔\image\blood</Filter>
+    </Image>
+    <Image Include="image\blood\blood_3.png">
+      <Filter>資源檔\image\blood</Filter>
+    </Image>
+    <Image Include="image\blood\blood_4.png">
+      <Filter>資源檔\image\blood</Filter>
+    </Image>
+    <Image Include="image\blood\blood_5.png">
+      <Filter>資源檔\image\blood</Filter>
+    </Image>
+    <Image Include="image\magic\magic_5.png">
+      <Filter>資源檔\image\magic</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="sound\atk_sound.wav">
+      <Filter>資源檔\image\sound</Filter>
+    </Media>
+    <Media Include="sound\TollgateRoom.mp3">
+      <Filter>資源檔\image\sound</Filter>
+    </Media>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
