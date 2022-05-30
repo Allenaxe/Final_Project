@@ -145,6 +145,15 @@
     <Image Include="image\PauseUI.png">
       <Filter>資源檔\image</Filter>
     </Image>
+    <Image Include="image\home.png">
+      <Filter>資源檔\image</Filter>
+    </Image>
+    <Image Include="image\play.png">
+      <Filter>資源檔\image</Filter>
+    </Image>
+    <Image Include="image\setting.png">
+      <Filter>資源檔\image</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Media Include="sound\atk_sound.wav">

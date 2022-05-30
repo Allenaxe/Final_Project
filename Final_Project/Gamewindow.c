@@ -83,7 +83,6 @@ void game_update() {
     }
 
     if (window == PROCESS) {
-        menu_destroy();
         game_scene_init();
         judge_next_window = false;
         window = GAME;
@@ -98,8 +97,15 @@ void game_update() {
         judge_next_window = false;
     }
     if (window == PAUSE) {
-        if (judge_next_window) window = GAME;
-        if (back_to_menu) window = MENU;
+        if (judge_next_window) {
+            pause_scene_destroy();
+            window = GAME;
+        }
+        if (back_to_menu) {
+            game_scene_destroy();
+            pause_scene_destroy();
+            window = MENU;
+        }
         back_to_menu = false;
         judge_next_window = false;
     }

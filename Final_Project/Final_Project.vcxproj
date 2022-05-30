@@ -184,12 +184,15 @@
     <Image Include="image\defence\defence_3.png" />
     <Image Include="image\defence\defence_4.png" />
     <Image Include="image\defence\defence_5.png" />
+    <Image Include="image\home.png" />
     <Image Include="image\icon.jpg" />
     <Image Include="image\logo.png" />
     <Image Include="image\magic\magic_5.png" />
     <Image Include="image\NewGame.png" />
     <Image Include="image\pause.png" />
     <Image Include="image\pause_press.png" />
+    <Image Include="image\play.png" />
+    <Image Include="image\setting.png" />
     <Image Include="image\stage.jpg" />
     <Image Include="image\StartScene0.png" />
     <Image Include="image\UI.png" />
