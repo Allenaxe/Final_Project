@@ -48,6 +48,9 @@
     <ClInclude Include="charater.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
+    <ClInclude Include="effect.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="monster.c">
@@ -66,6 +69,9 @@
       <Filter>資源檔</Filter>
     </ClCompile>
     <ClCompile Include="character.c">
+      <Filter>資源檔</Filter>
+    </ClCompile>
+    <ClCompile Include="effect.c">
       <Filter>資源檔</Filter>
     </ClCompile>
   </ItemGroup>

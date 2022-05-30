@@ -16,9 +16,10 @@ extern const float FPS;
 extern const int WIDTH;
 extern const int HEIGHT;
 extern bool key_state[ALLEGRO_KEY_MAX];
-extern bool judge_next_window;
-extern bool back_to_menu;
-extern enum {MENU = 0, PROCESS = 1, GAME = 2, PAUSE = 3};
+extern int judge_next_window;
+extern int button_effect;
+extern enum { DEFAULT = 0, MENU = 1, PROCESS = 2, GAME = 3, CHARACTER = 4, PAUSE = 5, SETTING = 6 };
+extern int window;
 extern ALLEGRO_EVENT_QUEUE* event_queue;
 extern ALLEGRO_TIMER* fps;
 #endif

@@ -8,8 +8,6 @@ ALLEGRO_BITMAP* menu = NULL;
 //GAME
 ALLEGRO_BITMAP* Logo= NULL;
 ALLEGRO_BITMAP* background = NULL;
-ALLEGRO_BITMAP* Pause = NULL;
-ALLEGRO_BITMAP* PausePress = NULL;
 //PAUSE
 ALLEGRO_BITMAP* PauseUI = NULL;
 ALLEGRO_BITMAP* SettingButton = NULL;
@@ -26,9 +24,9 @@ void menu_init() {
 void menu_process(ALLEGRO_EVENT event) {
     if (event.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
         if (400 <= event.mouse.x && event.mouse.x <= 530 && 600 <= event.mouse.y && event.mouse.y <= 660)
-            judge_next_window = true;
+            judge_next_window = GAME;
         if (800 <= event.mouse.x && event.mouse.x <= 930 && 600 <= event.mouse.y && event.mouse.y <= 660)
-            judge_next_window = true;
+            judge_next_window = CHARACTER;
     }
 }
 void menu_draw() {
@@ -49,28 +47,23 @@ void game_scene_init() {
     character_init();
     character_state_init();
     background = al_load_bitmap("./image/stage.jpg");
-    Pause = al_load_bitmap("./image/pause.png");
-    PausePress = al_load_bitmap("./image/pause_press.png");
 }
 
 void game_process(ALLEGRO_EVENT event) {
     if (event.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
         if (1300 <= event.mouse.x && event.mouse.x <= 1360 && 15 <= event.mouse.y && event.mouse.y <= 60) {
-            judge_next_window = true;
+            judge_next_window = PAUSE;
         }   
     }
 }
 
 void game_scene_draw() {
     al_draw_bitmap(background, 0, 0, 0);
-    al_draw_bitmap(Pause, 1300, 15, 0);
     character_draw();
     charater_state_update();  //!!!!!!
 }
 void game_scene_destroy() {
     al_destroy_bitmap(background);
-    al_destroy_bitmap(Pause);
-    al_destroy_bitmap(PausePress);
     character_destory();
     charater_state_destory();
 }
@@ -84,14 +77,14 @@ void pause_scene_init() {
 
 void pause_process(ALLEGRO_EVENT event) {
     if (event.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
-        /*if (400 <= event.mouse.x && event.mouse.x <= 530 && 475 <= event.mouse.y && event.mouse.y <= 575) {
-            judge_next_window = true;
-        }*/
-        /*if (560 <= event.mouse.x && event.mouse.x <= 750 && 475 <= event.mouse.y && event.mouse.y <= 575) {
-            judge_next_window = true;
-        }*/
-        if (780 <= event.mouse.x && event.mouse.x <= 890 && 475 <= event.mouse.y && event.mouse.y <= 575) {
-            back_to_menu = true;
+        if (400 <= event.mouse.x && event.mouse.x <= 530 && 475 <= event.mouse.y && event.mouse.y <= 575) {
+            judge_next_window = SETTING;
+        }
+        else if (560 <= event.mouse.x && event.mouse.x <= 750 && 475 <= event.mouse.y && event.mouse.y <= 575) {
+            judge_next_window = GAME;
+        }
+        else if (780 <= event.mouse.x && event.mouse.x <= 890 && 475 <= event.mouse.y && event.mouse.y <= 575) {
+            judge_next_window = MENU;
         }
     }
 }

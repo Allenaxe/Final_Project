@@ -1,7 +1,6 @@
 #include "GameWindow.h"
 
 bool draw = false;
-int window = 1;
 
 const char* title = "LegendKnight";
 
@@ -73,47 +72,48 @@ void game_begin() {
     al_start_timer(fps);
     // initialize the menu before entering the loop
     window = MENU;
+    button_effect_init();
     menu_init();
 
 }
 void game_update() {
     if (window == MENU) {
-        if(judge_next_window) window = PROCESS;
-        judge_next_window = false;
+        if(judge_next_window == GAME) window = PROCESS;
+        judge_next_window = DEFAULT;
     }
 
     if (window == PROCESS) {
         game_scene_init();
-        judge_next_window = false;
+        judge_next_window = DEFAULT;
         window = GAME;
     }
 
     if (window == GAME) {
         charater_update();
-        if (judge_next_window) {
+        if (judge_next_window == PAUSE) {
             pause_scene_init();
             window = PAUSE;
         }
         judge_next_window = false;
     }
     if (window == PAUSE) {
-        if (judge_next_window) {
+        if (judge_next_window == GAME) {
             pause_scene_destroy();
             window = GAME;
         }
-        if (back_to_menu) {
+        if (judge_next_window == MENU) {
             game_scene_destroy();
             pause_scene_destroy();
             window = MENU;
         }
-        back_to_menu = false;
-        judge_next_window = false;
+        judge_next_window = DEFAULT;
     }
 }
 int process_event() {
     // Request the event
     ALLEGRO_EVENT event;
     al_wait_for_event(event_queue, &event);
+    button_effect_update(event);
     // process the event of other component
     if (window == MENU) {
         menu_process(event);
@@ -130,8 +130,8 @@ int process_event() {
     if (event.type == ALLEGRO_EVENT_DISPLAY_CLOSE)
         return GAME_TERMINATE;
     else if (event.type == ALLEGRO_EVENT_TIMER)
-        if (event.timer.source == fps)
-            draw = true;
+        if (event.timer.source == fps)  draw = true;
+        
     if (draw) game_update();
     return 0;
 }
@@ -165,4 +165,5 @@ void game_destroy() {
     al_destroy_display(display);
     game_scene_destroy();
     pause_scene_destroy();
+    button_effect_destroy();
 }

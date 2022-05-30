@@ -1,6 +1,7 @@
 #include "global.h"
 #include "charater.h"
 #include "scene.h"
+#include "effect.h"
 
 int Game_establish();
 void game_init();
