@@ -142,6 +142,9 @@
     <Image Include="image\magic\magic_5.png">
       <Filter>資源檔\image\magic</Filter>
     </Image>
+    <Image Include="image\PauseUI.png">
+      <Filter>資源檔\image</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Media Include="sound\atk_sound.wav">

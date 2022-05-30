@@ -83,20 +83,20 @@ void charater_process(ALLEGRO_EVENT event) {
 }
 void charater_update() {
     // use the idea of finite state machine to deal with different state
-    if (key_state[ALLEGRO_KEY_W]) {
+    if (key_state[ALLEGRO_KEY_W] && chara.y >= 0) {
         chara.y -= 5;
         chara.state = MOVE;
     }
-    else if (key_state[ALLEGRO_KEY_A]) {
+    else if (key_state[ALLEGRO_KEY_A] && chara.x >= 0) {
         chara.dir = false;
         chara.x -= 5;
         chara.state = MOVE;
     }
-    else if (key_state[ALLEGRO_KEY_S]) {
+    else if (key_state[ALLEGRO_KEY_S] && chara.y <= HEIGHT - 100) {
         chara.y += 5;
         chara.state = MOVE;
     }
-    else if (key_state[ALLEGRO_KEY_D]) {
+    else if (key_state[ALLEGRO_KEY_D] && chara.x <= WIDTH - 100) {
         chara.dir = true;
         chara.x += 5;
         chara.state = MOVE;
@@ -188,7 +188,7 @@ void character_state_init() {
     chara_state.img_magic[4] = al_load_bitmap("./image/magic/magic_5.png");
 }
 
-void charater_state_draw() {
+void charater_state_update() {
     al_draw_bitmap(chara_state.UI, 5, 5, 0);
     if (chara.blood == 5) al_draw_bitmap(chara_state.img_blood[4], 43.75, 13.75, 0);
     else if (chara.blood == 4) al_draw_bitmap(chara_state.img_blood[3], 43.75, 13.75, 0);

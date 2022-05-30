@@ -193,6 +193,7 @@
     <Image Include="image\stage.jpg" />
     <Image Include="image\StartScene0.png" />
     <Image Include="image\UI.png" />
+    <Image Include="image\PauseUI.png" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="sound\atk_sound.wav" />

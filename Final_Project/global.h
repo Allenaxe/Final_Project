@@ -17,7 +17,8 @@ extern const int WIDTH;
 extern const int HEIGHT;
 extern bool key_state[ALLEGRO_KEY_MAX];
 extern bool judge_next_window;
-extern enum {MENU = 0, PROCESS = 1, GAME = 2, CHARATER = 3};
+extern bool back_to_menu;
+extern enum {MENU = 0, PROCESS = 1, GAME = 2, PAUSE = 3};
 extern ALLEGRO_EVENT_QUEUE* event_queue;
 extern ALLEGRO_TIMER* fps;
 #endif

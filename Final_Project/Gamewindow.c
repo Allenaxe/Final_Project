@@ -72,20 +72,36 @@ void game_begin() {
     al_play_sample_instance(sample_instance);
     al_start_timer(fps);
     // initialize the menu before entering the loop
+    window = MENU;
     menu_init();
 
 }
 void game_update() {
-    if (judge_next_window) {
-        if (window == PROCESS) {
-            menu_destroy();
-            game_scene_init();
-            judge_next_window = false;
-            window = 2;
-        }
+    if (window == MENU) {
+        if(judge_next_window) window = PROCESS;
+        judge_next_window = false;
     }
+
+    if (window == PROCESS) {
+        menu_destroy();
+        game_scene_init();
+        judge_next_window = false;
+        window = GAME;
+    }
+
     if (window == GAME) {
         charater_update();
+        if (judge_next_window) {
+            pause_scene_init();
+            window = PAUSE;
+        }
+        judge_next_window = false;
+    }
+    if (window == PAUSE) {
+        if (judge_next_window) window = GAME;
+        if (back_to_menu) window = MENU;
+        back_to_menu = false;
+        judge_next_window = false;
     }
 }
 int process_event() {
@@ -93,11 +109,15 @@ int process_event() {
     ALLEGRO_EVENT event;
     al_wait_for_event(event_queue, &event);
     // process the event of other component
-    if (window == PROCESS) {
+    if (window == MENU) {
         menu_process(event);
     }
     else if (window == GAME) {
         charater_process(event);
+        game_process(event);
+    }
+    else if (window == PAUSE) {
+        pause_process(event);
     }
 
     // Shutdown our program
@@ -110,11 +130,14 @@ int process_event() {
     return 0;
 }
 void game_draw() {
-    if (window == PROCESS) {
+    if (window == MENU) {
         menu_draw();
     }
     else if (window == GAME) {
         game_scene_draw();
+    }
+    else if (window == PAUSE) {
+        pause_scene_draw();
     }
     al_flip_display();
 }
@@ -135,4 +158,5 @@ void game_destroy() {
     al_destroy_event_queue(event_queue);
     al_destroy_display(display);
     game_scene_destroy();
+    pause_scene_destroy();
 }
