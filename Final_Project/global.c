@@ -9,4 +9,4 @@ ALLEGRO_TIMER* fps = NULL;
 bool key_state[ALLEGRO_KEY_MAX] = { false };
 int judge_next_window = DEFAULT;
 int button_effect = DEFAULT;
-int window = DEFAULT;
+int window = MENU;

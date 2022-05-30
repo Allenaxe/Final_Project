@@ -28,6 +28,9 @@
     <Filter Include="資源檔\image\sound">
       <UniqueIdentifier>{b19dad73-02ca-4114-823a-e511883b3ff0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="資源檔\image\button">
+      <UniqueIdentifier>{7b40298c-ac2e-4998-b070-37882d06fbf2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="scene.h">
@@ -79,15 +82,6 @@
     <Image Include="image\logo.png">
       <Filter>資源檔\image</Filter>
     </Image>
-    <Image Include="image\NewGame.png">
-      <Filter>資源檔\image</Filter>
-    </Image>
-    <Image Include="image\pause.png">
-      <Filter>資源檔\image</Filter>
-    </Image>
-    <Image Include="image\pause_press.png">
-      <Filter>資源檔\image</Filter>
-    </Image>
     <Image Include="image\stage.jpg">
       <Filter>資源檔\image</Filter>
     </Image>
@@ -107,9 +101,6 @@
       <Filter>資源檔\image</Filter>
     </Image>
     <Image Include="image\char_move2.png">
-      <Filter>資源檔\image</Filter>
-    </Image>
-    <Image Include="image\Charater.png">
       <Filter>資源檔\image</Filter>
     </Image>
     <Image Include="image\icon.jpg">
@@ -151,14 +142,38 @@
     <Image Include="image\PauseUI.png">
       <Filter>資源檔\image</Filter>
     </Image>
-    <Image Include="image\home.png">
-      <Filter>資源檔\image</Filter>
+    <Image Include="image\button\NewGamePressDown.png">
+      <Filter>資源檔\image\button</Filter>
     </Image>
-    <Image Include="image\play.png">
-      <Filter>資源檔\image</Filter>
+    <Image Include="image\button\SettingPressDown.png">
+      <Filter>資源檔\image\button</Filter>
     </Image>
-    <Image Include="image\setting.png">
-      <Filter>資源檔\image</Filter>
+    <Image Include="image\button\PausePressDown.png">
+      <Filter>資源檔\image\button</Filter>
+    </Image>
+    <Image Include="image\button\SettingButton.png">
+      <Filter>資源檔\image\button</Filter>
+    </Image>
+    <Image Include="image\button\PlayButton.png">
+      <Filter>資源檔\image\button</Filter>
+    </Image>
+    <Image Include="image\button\PauseButton.png">
+      <Filter>資源檔\image\button</Filter>
+    </Image>
+    <Image Include="image\button\NewGameButton.png">
+      <Filter>資源檔\image\button</Filter>
+    </Image>
+    <Image Include="image\button\HomeButton.png">
+      <Filter>資源檔\image\button</Filter>
+    </Image>
+    <Image Include="image\button\CharacterButton.png">
+      <Filter>資源檔\image\button</Filter>
+    </Image>
+    <Image Include="image\button\HomePressDown.png">
+      <Filter>資源檔\image\button</Filter>
+    </Image>
+    <Image Include="image\button\PlayPressDown.png">
+      <Filter>資源檔\image\button</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
