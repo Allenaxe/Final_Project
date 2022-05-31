@@ -202,6 +202,7 @@
     <Image Include="image\icon.jpg" />
     <Image Include="image\logo.png" />
     <Image Include="image\magic\magic_5.png" />
+    <Image Include="image\monster\monster1.png" />
     <Image Include="image\stage.jpg" />
     <Image Include="image\StartScene0.png" />
     <Image Include="image\statue\statue1.png" />

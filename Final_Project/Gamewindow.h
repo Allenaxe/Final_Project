@@ -3,6 +3,7 @@
 #include "scene.h"
 #include "effect.h"
 #include "object.h"
+#include "monster.h"
 
 int Game_establish();
 void game_init();

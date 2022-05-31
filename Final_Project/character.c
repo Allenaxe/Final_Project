@@ -4,9 +4,12 @@
 enum { STOP = 0, MOVE, ATK };
 typedef struct character
 {
+    char name[10];
     int x, y; // the position of image
+    int coin;
     int blood;
     int magic;
+    int attack;
     int defence;
     int width, height; // the width and height of image
     bool dir; // left: false, right: true
@@ -26,7 +29,7 @@ typedef struct character_state
     ALLEGRO_BITMAP* img_magic[5];
 }Character_State;
 
-Character chara;
+Character chara = {.name = "character\0"};
 Character_State chara_state;
 ALLEGRO_SAMPLE* sample = NULL;
 
@@ -49,9 +52,11 @@ void character_init() {
     al_attach_sample_instance_to_mixer(chara.atk_Sound, al_get_default_mixer());
 
     // initial the geometric information of character
+    chara.coin = 0;
     chara.blood = 5;
     chara.magic = 180;
     chara.defence = 5;
+    chara.attack = 5;
     chara.width = al_get_bitmap_width(chara.img_move[0]);
     chara.height = al_get_bitmap_height(chara.img_move[0]);
     chara.x = WIDTH / 2 + 100;
@@ -63,6 +68,7 @@ void character_init() {
     chara.anime = 0;
     chara.anime_time = 30;
 
+    object_construct(chara.name, chara.x, chara.x + 120, chara.y + 115, chara.y);
 }
 void charater_process(ALLEGRO_EVENT event) {
     // process the animation
@@ -74,6 +80,10 @@ void charater_process(ALLEGRO_EVENT event) {
         // process the keyboard event
     }
     else if (event.type == ALLEGRO_EVENT_KEY_DOWN) {
+        if (collision == 4 && chara.coin >= 15) {
+            chara.coin -= 15;
+            chara.attack += 5;
+        }
         key_state[event.keyboard.keycode] = true;
         chara.anime = 0;
     }
@@ -83,8 +93,7 @@ void charater_process(ALLEGRO_EVENT event) {
 }
 void charater_update() {
     // use the idea of finite state machine to deal with different state
-    int collision = 0;
-    collision = collision_judge(chara.x, chara.x + 120, chara.y + 115, chara.y);
+    collision = collision_judge(chara.name, chara.x, chara.x + 120, chara.y + 115, chara.y);
     if (key_state[ALLEGRO_KEY_W] && chara.y >= 0 && collision != 4) {
         chara.y -= 5;
         chara.state = MOVE;
@@ -113,6 +122,7 @@ void charater_update() {
     else if (chara.anime == 0) {
         chara.state = STOP;
     }
+    collision = 0;
 }
 void character_draw() {
     // with the state, draw corresponding image

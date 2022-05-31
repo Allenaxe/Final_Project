@@ -10,3 +10,4 @@ bool key_state[ALLEGRO_KEY_MAX] = { false };
 int judge_next_window = DEFAULT;
 int button_effect = DEFAULT;
 int window = MENU;
+int collision = 0;

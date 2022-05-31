@@ -84,12 +84,14 @@ void game_update() {
 
     if (window == PROCESS) {
         game_scene_init();
+        monster_init();
         judge_next_window = DEFAULT;
         window = GAME;
     }
 
     if (window == GAME) {
         charater_update();
+        monster_update();
         if (judge_next_window == PAUSE) {
             pause_scene_init();
             window = PAUSE;
@@ -104,6 +106,7 @@ void game_update() {
         if (judge_next_window == MENU) {
             game_scene_destroy();
             pause_scene_destroy();
+            monster_destroy();
             window = MENU;
         }
         judge_next_window = DEFAULT;
@@ -141,6 +144,8 @@ void game_draw() {
     }
     else if (window == GAME) {
         game_scene_draw();
+        monster_draw();
+        charater_state_update();
     }
     else if (window == PAUSE) {
         pause_scene_draw();
@@ -166,5 +171,6 @@ void game_destroy() {
     game_scene_destroy();
     pause_scene_destroy();
     button_effect_destroy();
+    monster_destroy();
     object_free();
 }

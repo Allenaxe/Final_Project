@@ -66,7 +66,6 @@ void game_scene_draw() {
     al_draw_bitmap(PauseButton, 1300, 15, 0);
     character_draw();
     statue_draw();
-    charater_state_update();  //!!!!!!
 }
 void game_scene_destroy() {
     al_destroy_bitmap(background);
