@@ -31,6 +31,9 @@
     <Filter Include="資源檔\image\button">
       <UniqueIdentifier>{7b40298c-ac2e-4998-b070-37882d06fbf2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="資源檔\image\statue">
+      <UniqueIdentifier>{237597c2-d9f2-4f75-829e-a558cd25c855}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="scene.h">
@@ -54,6 +57,9 @@
     <ClInclude Include="effect.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
+    <ClInclude Include="object.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="monster.c">
@@ -75,6 +81,12 @@
       <Filter>資源檔</Filter>
     </ClCompile>
     <ClCompile Include="effect.c">
+      <Filter>資源檔</Filter>
+    </ClCompile>
+    <ClCompile Include="statue.c">
+      <Filter>資源檔</Filter>
+    </ClCompile>
+    <ClCompile Include="collision.c">
       <Filter>資源檔</Filter>
     </ClCompile>
   </ItemGroup>
@@ -174,6 +186,15 @@
     </Image>
     <Image Include="image\button\PlayPressDown.png">
       <Filter>資源檔\image\button</Filter>
+    </Image>
+    <Image Include="image\statue\statue1.png">
+      <Filter>資源檔\image\statue</Filter>
+    </Image>
+    <Image Include="image\statue\statue2.png">
+      <Filter>資源檔\image\statue</Filter>
+    </Image>
+    <Image Include="image\statue\statuetalk.png">
+      <Filter>資源檔\image\statue</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>

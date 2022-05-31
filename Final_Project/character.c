@@ -54,7 +54,7 @@ void character_init() {
     chara.defence = 5;
     chara.width = al_get_bitmap_width(chara.img_move[0]);
     chara.height = al_get_bitmap_height(chara.img_move[0]);
-    chara.x = WIDTH / 2;
+    chara.x = WIDTH / 2 + 100;
     chara.y = HEIGHT / 2;
     chara.dir = false;
 
@@ -83,20 +83,22 @@ void charater_process(ALLEGRO_EVENT event) {
 }
 void charater_update() {
     // use the idea of finite state machine to deal with different state
-    if (key_state[ALLEGRO_KEY_W] && chara.y >= 0) {
+    int collision = 0;
+    collision = collision_judge(chara.x, chara.x + 120, chara.y + 115, chara.y);
+    if (key_state[ALLEGRO_KEY_W] && chara.y >= 0 && collision != 4) {
         chara.y -= 5;
         chara.state = MOVE;
     }
-    else if (key_state[ALLEGRO_KEY_A] && chara.x >= 0) {
+    else if (key_state[ALLEGRO_KEY_A] && chara.x >= 0 && collision != 2) {
         chara.dir = false;
         chara.x -= 5;
         chara.state = MOVE;
     }
-    else if (key_state[ALLEGRO_KEY_S] && chara.y <= HEIGHT - 100) {
+    else if (key_state[ALLEGRO_KEY_S] && chara.y <= HEIGHT - 100 && collision != 3) {
         chara.y += 5;
         chara.state = MOVE;
     }
-    else if (key_state[ALLEGRO_KEY_D] && chara.x <= WIDTH - 100) {
+    else if (key_state[ALLEGRO_KEY_D] && chara.x <= WIDTH - 100 && collision != 1) {
         chara.dir = true;
         chara.x += 5;
         chara.state = MOVE;

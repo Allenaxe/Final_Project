@@ -166,4 +166,5 @@ void game_destroy() {
     game_scene_destroy();
     pause_scene_destroy();
     button_effect_destroy();
+    object_free();
 }

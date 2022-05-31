@@ -47,6 +47,7 @@ void menu_destroy() {
 // function of game_scene
 void game_scene_init() {
     character_init();
+    statue_init();
     character_state_init();
     background = al_load_bitmap("./image/stage.jpg");
     PauseButton = al_load_bitmap("./image/button/PauseButton.png");
@@ -64,12 +65,14 @@ void game_scene_draw() {
     al_draw_bitmap(background, 0, 0, 0);
     al_draw_bitmap(PauseButton, 1300, 15, 0);
     character_draw();
+    statue_draw();
     charater_state_update();  //!!!!!!
 }
 void game_scene_destroy() {
     al_destroy_bitmap(background);
     al_destroy_bitmap(PauseButton);
     character_destory();
+    statue_destroy();
     charater_state_destory();
 }
 

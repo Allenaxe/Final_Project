@@ -2,6 +2,7 @@
 #include "charater.h"
 #include "scene.h"
 #include "effect.h"
+#include "object.h"
 
 int Game_establish();
 void game_init();

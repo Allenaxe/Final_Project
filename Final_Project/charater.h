@@ -1,4 +1,5 @@
 #include "global.h"
+#include "object.h"
 
 void character_init();
 void charater_process(ALLEGRO_EVENT event);

@@ -154,6 +154,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="charater.h" />
+    <ClInclude Include="object.h" />
     <ClInclude Include="effect.h" />
     <ClInclude Include="Gamewindow.h" />
     <ClInclude Include="global.h" />
@@ -163,12 +164,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="character.c" />
+    <ClCompile Include="collision.c" />
     <ClCompile Include="Gamewindow.c" />
     <ClCompile Include="global.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="monster.c" />
     <ClCompile Include="scene.c" />
     <ClCompile Include="effect.c" />
+    <ClCompile Include="statue.c" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="image\blood\blood_1.png" />
@@ -201,6 +204,9 @@
     <Image Include="image\magic\magic_5.png" />
     <Image Include="image\stage.jpg" />
     <Image Include="image\StartScene0.png" />
+    <Image Include="image\statue\statue1.png" />
+    <Image Include="image\statue\statue2.png" />
+    <Image Include="image\statue\statuetalk.png" />
     <Image Include="image\UI.png" />
     <Image Include="image\PauseUI.png" />
   </ItemGroup>
