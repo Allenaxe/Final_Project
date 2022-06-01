@@ -158,7 +158,6 @@
     <ClInclude Include="effect.h" />
     <ClInclude Include="Gamewindow.h" />
     <ClInclude Include="global.h" />
-    <ClInclude Include="monster.h" />
     <ClInclude Include="obstacle.h" />
     <ClInclude Include="scene.h" />
   </ItemGroup>
@@ -217,6 +216,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Readme.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

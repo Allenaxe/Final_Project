@@ -25,3 +25,13 @@ extern int window;
 extern ALLEGRO_EVENT_QUEUE* event_queue;
 extern ALLEGRO_TIMER* fps;
 #endif
+
+/* 
+
+¸I¼²½c
+
+CHARACTER : (0, 120, 115, 0)
+MONSTER : (0, 50, 50, 0)
+STATUE : (0, 110, 190, 0)
+
+*/

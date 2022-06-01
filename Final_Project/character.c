@@ -93,23 +93,23 @@ void charater_process(ALLEGRO_EVENT event) {
 }
 void charater_update() {
     // use the idea of finite state machine to deal with different state
-    collision = collision_judge(chara.name, chara.x, chara.x + 120, chara.y + 115, chara.y);
+    collision = collision_judge(chara.name, chara.x, chara.x + 100, chara.y + 100, chara.y);
     if (key_state[ALLEGRO_KEY_W] && chara.y >= 0 && collision != 4) {
-        chara.y -= 5;
+        chara.y -= 2;
         chara.state = MOVE;
     }
     else if (key_state[ALLEGRO_KEY_A] && chara.x >= 0 && collision != 2) {
         chara.dir = false;
-        chara.x -= 5;
+        chara.x -= 2;
         chara.state = MOVE;
     }
     else if (key_state[ALLEGRO_KEY_S] && chara.y <= HEIGHT - 100 && collision != 3) {
-        chara.y += 5;
+        chara.y += 2;
         chara.state = MOVE;
     }
     else if (key_state[ALLEGRO_KEY_D] && chara.x <= WIDTH - 100 && collision != 1) {
         chara.dir = true;
-        chara.x += 5;
+        chara.x += 2;
         chara.state = MOVE;
     }
     else if (key_state[ALLEGRO_KEY_SPACE]) {
@@ -122,6 +122,7 @@ void charater_update() {
     else if (chara.anime == 0) {
         chara.state = STOP;
     }
+    collision_update(chara.name, chara.x, chara.x + 120, chara.y + 115, chara.y);
     collision = 0;
 }
 void character_draw() {

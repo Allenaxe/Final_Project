@@ -51,9 +51,6 @@
     <ClInclude Include="global.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="monster.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
     <ClInclude Include="charater.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
@@ -213,5 +210,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Readme.txt">
+      <Filter>資源檔</Filter>
+    </Text>
   </ItemGroup>
 </Project>
