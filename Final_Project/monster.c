@@ -88,17 +88,18 @@ void monster_update() {
     }
 }
 
-void monster_delete(char* src) {
-    printf("trigger\n");
+int monster_delete(char* src) {
+    if (DATK == false) return 0;
     for (int i = 0; i <= size; ++i) {
         if (!strcmp(src, New.group[i].name)) {
-            if (New.group[i].blood > 5) New.group[i].blood -= 5;
-            else strcpy_s(New.group[i].name, 50, "died");
+            if (New.group[i].blood > 5) { New.group[i].blood -= 5; return 0; }
+            else { strcpy_s(New.group[i].name, 50, "died\0"); return 1; }
         }
     }
+    return 0;
 }
 
-void monster_draw(char *src) {
+void monster_draw() {
     for (int i = 0; i <= size; ++i) {
         if(strcmp(New.group[i].name, "died"))
             al_draw_bitmap(New.MONSTER, New.group[i].x, New.group[i].y, New.group[i].direction);

@@ -12,6 +12,6 @@ void statue_destroy();
 
 void monster_init();
 void monster_update();
-void monster_delete(char *src);
+int monster_delete(char *src);
 void monster_draw();
 void monster_destroy();

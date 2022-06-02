@@ -36,6 +36,20 @@ void object_construct(char *src, int B_X_UL, int B_X_UR, int B_Y_DL, int B_Y_UL)
 	return;
 }
 
+void object_delete(char *src, int i) {
+	if (!i) return;
+	Node *current = head;
+	while (current->next != NULL) {
+		if (!strcmp(current->next->data.name, src)) {
+			Node *tmp = current->next;
+			current->next = current->next->next;
+			free(tmp);
+			break;
+		}
+		current = current->next;
+	}
+}
+
 void object_free() {
 	if (head == NULL) return;
 	Node* current = head;
@@ -61,7 +75,12 @@ int collision_judge(char *src, int A_X_UL, int A_X_UR, int A_Y_DL, int A_Y_UL) {
 	Node* current = head;
 	while(current != NULL) {
 		if (strcmp(src, current->data.name) && (A_X_UR >= current->data.BorderLeft && current->data.BorderRight >= A_X_UL && current->data.BorderUp <= A_Y_DL && A_Y_UL <= current->data.BorderDown)) {
-			if (!strcmp(current->data.name, "charater") && src[0] == 'm') monster_delete(src);
+			if (!strcmp(src, "character")) {
+				if (monster_delete(current->data.name)) {
+					object_delete(current->data.name, 1);
+					break;
+				}
+			}
 			if (A_X_UR == current->data.BorderLeft) {
 				return 1;
 			}

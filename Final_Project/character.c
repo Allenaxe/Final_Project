@@ -94,6 +94,7 @@ void charater_process(ALLEGRO_EVENT event) {
 void charater_update() {
     // use the idea of finite state machine to deal with different state
     collision = collision_judge(chara.name, chara.x, chara.x + 100, chara.y + 100, chara.y);
+    DATK = false;
     if (key_state[ALLEGRO_KEY_W] && chara.y >= 0 && collision != 4) {
         chara.y -= 2;
         chara.state = MOVE;
@@ -113,6 +114,7 @@ void charater_update() {
         chara.state = MOVE;
     }
     else if (key_state[ALLEGRO_KEY_SPACE]) {
+        DATK = true;
         chara.state = ATK;
     }
     else if (chara.anime == chara.anime_time - 1) {
