@@ -25,7 +25,7 @@ void monster_init() {
 	for (int i = 0; i <= size; ++i){
 		if (New.group != NULL) {
             sprintf_s(New.group[i].name, 50, "monster%d\0", i);
-            New.group[i].x = rand() % 1316; New.group[i].y = rand() % 718; New.group[i].blood = 5 + rand() % 10; New.group[i].direction = (rand() % 2) ? true : false;  New.group[i].walk = rand() % 8;
+            New.group[i].x = rand() % 1316; New.group[i].y = rand() % 718; New.group[i].blood = 100 + rand() % 10; New.group[i].direction = (rand() % 2) ? true : false;  New.group[i].walk = rand() % 8;
 			object_construct(New.group[i].name, New.group[i].x, New.group[i].x + 50, New.group[i].y + 50, New.group[i].y);
 		}
 	}

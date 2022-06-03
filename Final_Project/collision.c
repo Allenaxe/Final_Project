@@ -36,8 +36,7 @@ void object_construct(char *src, int B_X_UL, int B_X_UR, int B_Y_DL, int B_Y_UL)
 	return;
 }
 
-void object_delete(char *src, int i) {
-	if (!i) return;
+void object_delete(char *src) {
 	Node *current = head;
 	while (current->next != NULL) {
 		if (!strcmp(current->next->data.name, src)) {
@@ -77,9 +76,12 @@ int collision_judge(char *src, int A_X_UL, int A_X_UR, int A_Y_DL, int A_Y_UL) {
 		if (strcmp(src, current->data.name) && (A_X_UR >= current->data.BorderLeft && current->data.BorderRight >= A_X_UL && current->data.BorderUp <= A_Y_DL && A_Y_UL <= current->data.BorderDown)) {
 			if (!strcmp(src, "character")) {
 				if (monster_delete(current->data.name)) {
-					object_delete(current->data.name, 1);
+					object_delete(current->data.name);
 					break;
 				}
+				/*else {
+					character_delete(current->data.name);
+				}*/
 			}
 			if (A_X_UR == current->data.BorderLeft) {
 				return 1;
