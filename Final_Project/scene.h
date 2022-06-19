@@ -16,3 +16,7 @@ void pause_scene_init();
 void pause_process(ALLEGRO_EVENT event);
 void pause_scene_draw();
 void pause_scene_destroy();
+
+void character_scene_init();
+void character_scene_draw();
+void character_scene_destroy();
