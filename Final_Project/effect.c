@@ -9,7 +9,7 @@ ALLEGRO_BITMAP* HomePressButton = NULL;
 int count = 0;
 
 void button_effect_init() {
-	
+
 	NewGamePressButton = al_load_bitmap("./image/button/NewGamePressDown.png");
 	PausePressButton = al_load_bitmap("./image/button/PausePressDown.png");
 	SettingPressButton = al_load_bitmap("./image/button/SettingPressDown.png");
@@ -60,3 +60,4 @@ void button_effect_destroy() {
 	al_destroy_bitmap(PlayPressButton);
 	al_destroy_bitmap(HomePressButton);
 }
+

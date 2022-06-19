@@ -7,9 +7,12 @@
 #include <allegro5/allegro_primitives.h>
 #include <allegro5/allegro_image.h>
 #include <allegro5/allegro_audio.h>
+#include<allegro5/allegro_video.h>//fox
 #include <allegro5/allegro_acodec.h>
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_ttf.h>
+//fox
+#include"algif5/src/algif.h"
 
 // note that you can't assign initial value here!
 extern const float FPS;
@@ -24,9 +27,13 @@ enum { DEFAULT = 0, MENU = 1, PROCESS = 2, GAME = 3, CHARACTER = 4, PAUSE = 5, S
 extern int window;
 extern ALLEGRO_EVENT_QUEUE* event_queue;
 extern ALLEGRO_TIMER* fps;
+
+extern int chara_pos_x, chara_pos_y;
+extern int chara_lose_blood;
+
 #endif
 
-/* 
+/*
 
 ¸I¼²½c
 
