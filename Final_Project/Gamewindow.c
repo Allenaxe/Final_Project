@@ -98,6 +98,7 @@ void game_update() {
         }
         judge_next_window = false;
     }
+
     if (window == PAUSE) {
         if (judge_next_window == GAME) {
             pause_scene_destroy();
