@@ -12,7 +12,7 @@ void statue_init() {
 	STATUE_1.Statue = al_load_bitmap("./image/statue/statue1.png");
 	STATUE_1.StatueTalk = al_load_bitmap("./image/statue/statuetalk.png");
 	char tmp[10] = "statue1\0";
-	object_construct(tmp, WIDTH / 2 - 90, WIDTH / 2 + 20, HEIGHT / 2 + 100, HEIGHT / 2 - 90);
+	object_construct(tmp, WIDTH / 2 - 90, WIDTH / 2 - 20, HEIGHT / 2 + 60, HEIGHT / 2 - 90);
 }
 
 void statue_trigger() {

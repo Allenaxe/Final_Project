@@ -12,3 +12,6 @@ int judge_next_window = DEFAULT;
 int button_effect = DEFAULT;
 int window = MENU;
 int collision = 0;
+
+int chara_pos_x = 0, chara_pos_y = 0;
+int chara_lose_blood = 0;

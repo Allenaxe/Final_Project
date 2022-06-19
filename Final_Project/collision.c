@@ -7,7 +7,7 @@ typedef struct TYPE {
 
 typedef struct Node {
 	struct Node* next;
-	type data;
+	type data,shop;//000000
 }Node;
 
 Node *head = NULL;
@@ -35,6 +35,19 @@ void object_construct(char *src, int B_X_UL, int B_X_UR, int B_Y_DL, int B_Y_UL)
 	}
 	return;
 }
+//000000
+/*Node *item_supplement[10],*item_defence[10];
+int blood_control2(){
+    for(int i=0;i<10;i++){
+    if(collision_judge(item_supplement[i]->data.name,item_supplement[i]->data.BorderLeft, item_supplement[i]->data.BorderRight, item_supplement[i]->data.BorderUp,item_supplement[i]->data.BorderDown)!=0){
+    chara.blood=chara.blood+1;//adjust
+   }
+
+   if(collision_judge(item_defence[i]->data.name,item_defence[i]->data.BorderLeft, item_defence[i]->data.BorderRight, item_defence[i]->data.BorderUp,item_defence[i]->data.BorderDown)!=0){
+    chara.defence=chara.defence+1;//adjust
+   }
+    }
+}*/
 
 void object_delete(char *src) {
 	Node *current = head;
@@ -59,6 +72,23 @@ void object_free() {
 	}
 }
 
+void map_free() {
+    if (head == NULL) return;
+	Node* current = head;
+	while (current != NULL) {
+        if(!strcmp(current->data.name, "character\0")) {
+            head = current;
+            current = current->next;
+        }
+        else {
+            Node* tmp = current;
+            current = current->next;
+            free(tmp);
+        }
+	}
+	head->next = NULL;
+}
+//0000
 void collision_update(char* src, int A_X_UL, int A_X_UR, int A_Y_DL, int A_Y_UL) {
 	Node* current = head;
 	while (current != NULL) {
@@ -75,13 +105,14 @@ int collision_judge(char *src, int A_X_UL, int A_X_UR, int A_Y_DL, int A_Y_UL) {
 	while(current != NULL) {
 		if (strcmp(src, current->data.name) && (A_X_UR >= current->data.BorderLeft && current->data.BorderRight >= A_X_UL && current->data.BorderUp <= A_Y_DL && A_Y_UL <= current->data.BorderDown)) {
 			if (!strcmp(src, "character")) {
-				if (monster_delete(current->data.name)) {
+                int check = monster_delete(current->data.name);
+				if (check == 1) {
 					object_delete(current->data.name);
 					break;
 				}
-				/*else {
-					character_delete(current->data.name);
-				}*/
+				else if(check == 0 && strcmp(current->data.name, "statue1") && strcmp(current->data.name, "shop")) {
+                    chara_lose_blood = 1;
+				}
 			}
 			if (A_X_UR == current->data.BorderLeft) {
 				return 1;
